@@ -1,4 +1,4 @@
-sudo /etc/sysconfig/network-scripts
+sudo cd /etc/sysconfig/network-scripts
 sudo vi ifcfg-ens33
 
 #In Each create above with below configs as per respective VMs
@@ -53,6 +53,10 @@ NETMASK=255.255.255.0
 GATEWAY=192.168.1.1
 DNS1=8.8.8.8
 
+ping 192.168.1.10-13 #from VM1
+ping 192.168.1.11-13 #from VM2
+ping 192.168.1.11-13 #from VM3
+ping 192.168.1.11-13 #from VM4
 
 ##after this run following commands to install GIT and Python
 sudo apt update 
@@ -65,6 +69,7 @@ pip3 install flask request threading time hashlib
 
 cd .. #Go to root
 mkdir VC_ASGN1
+cd /VC_ASGN1
 git clone https://github.com/rahulagarwal25/VC_Assignment_1.git
 
 #Repeat above installation steps on each VM , then run python scripts of respective VM
